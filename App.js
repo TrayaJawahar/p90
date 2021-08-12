@@ -1,9 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import AppContainer from './src/navigations/AppNavigation';
+import * as React from "react";
+import { createSwitchNavigator, createAppContainer } from "react-navigation";
+
+import LoginScreen from "./src/screens/LoginScreen";
+import LoadingScreen from "./src/screens/LoadingScreen";
+import HomeScreen from "./src/screens/Home/HomeScreen";
+
+import * as firebase from "firebase";
+import { firebaseConfig } from "./config";
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
+}
+
+const AppSwitchNavigator = createSwitchNavigator({
+  LoadingScreen: LoadingScreen,
+  LoginScreen: LoginScreen,
+  HomeScreen: HomeScreen
+});
+
+const AppNavigator = createAppContainer(AppSwitchNavigator);
 
 export default function App() {
-  return (
-     <AppContainer />
-  );
+  return <AppNavigator />;
 }
