@@ -13,8 +13,11 @@ import DrawerContainer from '../screens/DrawerContainer/DrawerContainer';
 import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
-
-/* const Stack = createStackNavigator();
+import LoginScreen from '../screens/LoginScreen';
+import LogoutScreen from '../screens/LogoutScreen';
+import LoadingScreen from '../screens/LoadingScreen';
+import Profile from '../screens/Profile';
+/*const Stack = createStackNavigator();
 
 function MainNavigator() {
   return(
@@ -47,7 +50,11 @@ const MainNavigator = createStackNavigator(
     RecipesList: RecipesListScreen,
     Ingredient: IngredientScreen,
     Search: SearchScreen,
-    IngredientsDetails: IngredientsDetailsScreen
+    IngredientsDetails: IngredientsDetailsScreen,
+    LoginScreen: LoginScreen,
+    LoadingScreen : LoadingScreen,
+    LogoutScreen:LogoutScreen,
+    Profile: Profile
   },
   {
     initialRouteName: 'Home',
